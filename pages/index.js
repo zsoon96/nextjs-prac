@@ -1,6 +1,11 @@
+import Head from "next/head";
+
 export default function Home() {
   return (
     <div>
+        <Head>
+            <title>HOMEㅣNext JS 기초</title>
+        </Head>
       create-next-app으로 설치하면
       <br />
       1. 컴파일과 번들링이 자동으로 된다.(webpack과 babel)
