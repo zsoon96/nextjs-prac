@@ -1,11 +1,22 @@
 import axios from "axios";
 import Item from '../../src/component/Item'
+import Head from "next/head";
 
-const Post = ({ item }) => {
+const Post = ({item}) => {
 
     return (
         <>
-            { item && <Item item={item} />}
+            {item && (
+                <>
+                    {/* 메타 데이터 추가를 통해 검색엔진 및 공유에 최적화 */}
+                    <Head>
+                        <title>{item.name}</title>
+                        <meta name="description" content={item.description}/>
+                    </Head>
+                    <Item item={item}/>
+                </>
+
+            )}
         </>
     )
 }
