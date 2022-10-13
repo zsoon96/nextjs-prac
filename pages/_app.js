@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import 'semantic-ui-css/semantic.min.css'
 import Footer from "../src/component/Footer";
 import Top from "../src/component/Top";
+import {AuthContextProvider} from "../stores/authContext";
 
 // _app.js 역할
 // 페이지 전환 시, 레이아웃을 유지할 수 있다.
@@ -12,11 +13,14 @@ import Top from "../src/component/Top";
 // 글로벌 CSS를 적용할 수 있다.
 function MyApp({Component, pageProps}) {
     return (
-        <div style={{ width: 1000, margin: "0 auto" }}>
-            <Top/>
-            <Component {...pageProps} />
-            <Footer/>
-        </div>
+        // 인증 모듈 적용
+        <AuthContextProvider>
+            <div style={{width: 1000, margin: "0 auto"}}>
+                <Top/>
+                <Component {...pageProps} />
+                <Footer/>
+            </div>
+        </AuthContextProvider>
     )
 }
 
