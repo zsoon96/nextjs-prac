@@ -7,8 +7,9 @@ import AuthContext from "../stores/authContext";
 export default function Admin() {
 
     // user 정보 받기
-    const user = useContext(AuthContext);
+    const {user, isAuth} = useContext(AuthContext);
     console.log(user)
+    console.log(isAuth)
 
     // const router = useRouter();
     // const [isLogin, setIsLogin] = useState(false);

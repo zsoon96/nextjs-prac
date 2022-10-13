@@ -1,10 +1,14 @@
 import Head from "next/head";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import ItemList from "../src/component/ItemList";
 import {Divider, Header, Loader} from "semantic-ui-react";
+import AuthContext from "../stores/authContext";
 
 export default function Home() {
+
+    const {user} = useContext(AuthContext);
+    console.log(user)
 
     const [list, setList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
